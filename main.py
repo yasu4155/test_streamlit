@@ -1,26 +1,51 @@
 import streamlit as st
 import numpy as np
+import pandas as pd
 import time
 from PIL import Image
 
 st.title('Streamlit入門')
 st.write('Interactive Wedgets')
 
+df = pd.DataFrame({
+    '1st row': [1, 2, 3, 4, 5],
+    '2nd row': [10, 20, 30, 40, 50]
+})
+
+if st.checkbox('Table'):
+    st.write(df)
+
+df = pd.DataFrame(
+    np.random.rand(20, 3),
+    columns=['a', 'b', 'c']
+)
+
+if st.checkbox('Graph'):
+    st.line_chart(df)
+    st.area_chart(df)
+    st.bar_chart(df)
+    
+df = pd.DataFrame(
+    np.random.rand(100, 2)/(50, 50) + (35.69, 139.70),
+    columns=['lat', 'lon']
+)
+
+if st.checkbox('Map'):
+    st.map(df)
+
 left_column, right_column = st.columns(2)
 button = left_column.button('push')
 if button:
     right_column.write('here is right column')
 
-expandar1 = st.expander('question 1')
+expandar1 = st.expander('question a')
 expandar1.write('answer 1')
-expandar2 = st.expander('question 2')
+expandar1.write('answer 1a')
+expandar1.write('answer 1b')
+expandar2 = st.expander('question b')
 expandar2.write('answer 2')
-expandar3 = st.expander('question 3')
+expandar3 = st.expander('question c')
 expandar3.write('answer 3')
-expandar4 = st.expander('question 4')
-expandar4.write('answer 4')
-expandar5 = st.expander('question 5')
-expandar5.write('answer 5')
 
 option = st.selectbox(
     'select your favorite number',
