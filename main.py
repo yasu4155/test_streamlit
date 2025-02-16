@@ -4,15 +4,7 @@ import time
 from PIL import Image
 
 st.title('Streamlit入門')
-st.write('progress bar')
-
-latest_iteration = st.empty()
-bar = st.progress(0)
-
-for i in range(100):
-    latest_iteration.text(f'Iteration: {i+1}')
-    bar.progress(i + 1)
-    time.sleep(0.05)
+st.write('Interactive Wedgets')
 
 left_column, right_column = st.columns(2)
 button = left_column.button('push')
@@ -36,12 +28,23 @@ option = st.selectbox(
 )
 'your favorite number is', option, '.'
 
-# if st.checkbox('Show Image'):
-#     img = Image.open('sample.jpg')
-#     st.image(img, caption='background', use_container_width =True)
+if st.checkbox('Show Image'):
+    img = Image.open('sample.jpg')
+    st.image(img, caption='landscape', use_container_width =True)
 
 text = st.text_input('enter your hobby')
-condition = st.slider('condition', 0, 100, 50,)
-
 'Your hobby: ', text
+
+condition = st.slider('condition', 0, 100, 50,)
 'Condition: ', condition
+
+st.write('')
+st.write('progress bar')
+
+latest_iteration = st.empty()
+bar = st.progress(0)
+
+for i in range(100):
+    latest_iteration.text(f'Iteration: {i+1}')
+    bar.progress(i + 1)
+    time.sleep(0.05)
