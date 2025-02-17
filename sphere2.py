@@ -13,5 +13,4 @@ fig = go.Figure(data = [go.Surface(x = ax, y = ay, z = az)])
 fig.update_layout(title = dict(text = 'Sphere'), autosize = False,
                   width = 500, height = 500,
                   margin = dict(l=65, r=50, b=65, t=90))
-
 fig.show()

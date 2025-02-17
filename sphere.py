@@ -15,7 +15,7 @@ z = 10 * np.outer(np.ones(np.size(u)), np.cos(v))
 
 # Plot the surface
 ax.plot_surface(x, y, z,color="lightgreen", rcount=100, ccount=100, antialiased=False)
-plt.savefig("3d_ball.jpg", dpi=120)
-plt.show()
+# plt.savefig("3d_ball.jpg", dpi=120)
+# plt.show()
 
 st.pyplot(fig)

@@ -5,7 +5,6 @@ import time
 import plotly.graph_objects as go
 from PIL import Image
 
-
 st.title('Streamlit入門')
 st.write('Interactive Wedgets')
 
@@ -82,13 +81,13 @@ if st.checkbox('progress bar'):
         time.sleep(0.05)
 
 if st.checkbox('Sphere'):
-    u = np.linspace(0, 2 * np.pi, 100)
+    u = np.linspace(0, 2*np.pi, 100)
     v = np.linspace(0, np.pi, 100)
     ax = 10 * np.outer(np.cos(u), np.sin(v))
     ay = 10 * np.outer(np.sin(u), np.sin(v))
     az = 10 * np.outer(np.ones(np.size(u)), np.cos(v))
     fig = go.Figure(data = [go.Surface(x = ax, y = ay, z = az)])
-    fig.update_layout(title = dict(text = 'Sphere'), autosize = False,
-                width = 500, height = 500,
+    fig.update_layout(title = dict(text='Sphere'), autosize=False,
+                width=500, height=500,
                 margin = dict(l=65, r=50, b=65, t=90))
-    fig.show()
+    st.plotly_chart(fig)
