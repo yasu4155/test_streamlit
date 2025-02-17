@@ -10,6 +10,9 @@ streamlit run main.py
 streamlitアカウント作成
 https://streamlit.io/ ⇒ Free
 
+git 
+https://git-for-windows.github.io/
+
 github アカウント作成
 https://github.co.jp/ ⇒ Sign Up
 create a new repository
@@ -24,7 +27,7 @@ requirements.txt
     import streamlit
     import matplotlib
 
-stremlit login
+streamlit login
 delploy an app ⇒ Deploy
 
 ---
@@ -53,9 +56,9 @@ st.selectbox(label, option)
 st.text_input('text')
 st.slider('text', 0, 100, 50)
 
-st.slidebar.write('text')
-st.slidebar.text_input('text')
-st.slidebar.slider('text', 0, 100, 50)
+st.sidebar.write('text')
+st.sidebar.text_input('text')
+st.sidebar.slider('text', 0, 100, 50)
 
 left_column, right_column = st.columns(2)
 left_column.button('')
