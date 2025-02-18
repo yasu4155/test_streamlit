@@ -72,7 +72,7 @@ if st.checkbox('Sidebar'):
     condition = st.sidebar.slider('Condition', 0, 100, 50,)
     st.sidebar.write('Condition: ', condition)
 
-if st.checkbox('progress bar'):
+if st.checkbox('Progress bar'):
     latest_iteration = st.empty()
     bar = st.progress(0)
     for i in range(100):
