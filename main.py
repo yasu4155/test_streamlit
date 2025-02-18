@@ -5,7 +5,7 @@ import time
 import plotly.graph_objects as go
 from PIL import Image
 
-st.title('Streamlit入門')
+st.title('Streamlit Samples')
 st.write('Interactive Wedgets')
 
 if st.checkbox('Table'):
